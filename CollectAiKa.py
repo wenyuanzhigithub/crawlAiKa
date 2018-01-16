@@ -98,13 +98,6 @@ def  insertaika(citylist,Mainurl):
         "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11",
         "Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10"
     ]
-
-    # header = {
-    #    "User-Agent": random.choice(USER_AGENTS),
-    #    "Accept": 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    #    "Accept-Language": 'en-US,en;q=0.5',
-    #     'Accept-Encoding': 'gzip, deflate',
-    #           }
     header = {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
               "Accept-Encoding": "gzip, deflate",
               "Accept-Language": "zh-CN,zh;q=0.8",
@@ -120,8 +113,8 @@ def  insertaika(citylist,Mainurl):
 
 
     for city in citylist:
-        conn = pymssql.connect(host="59.151.127.51", user="datawarehouse_r", password="sdLEK236XDwd6",
-                               database="YHBI_DW")
+        conn = pymssql.connect(host="yourhost", user="account", password="pwd",
+                               database="dbname")
         cur = conn.cursor()
         if not cur:
             raise (NameError, "链接数据库失败")
@@ -194,7 +187,7 @@ if __name__ == '__main__':
     Mainurl = "http://dealer.xcar.com.cn/"
     sql = "SELECT DISTINCT [BrandName],[BrandLink] FROM [Scrab].[DimScrabBrand] WHERE DataSource = '爱卡汽车'  "
     sql_citylist = "SELECT [CityID],[CityName],[ProvinceName] FROM [Scrab].[DimScrabCity] WHERE DataSource = '爱卡汽车' "
-    conn = pymssql.connect(host="59.151.127.51", user="datawarehouse_r", password="sdLEK236XDwd6", database="YHBI_DW")
+    conn = pymssql.connect(host="host", user="acount", password="pwd", database="dbname")
     cur = conn.cursor()
     if not cur:
         raise (NameError, "链接数据库失败")
