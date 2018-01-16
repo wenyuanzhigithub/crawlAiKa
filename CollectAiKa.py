@@ -221,4 +221,4 @@ if __name__ == '__main__':
     p3.join()
     p4.join()
 
-print("Execute OK!")
+print("finished!")
