@@ -45,7 +45,7 @@ def url_retry(url,num_retries=3):
         if num_retries>0:
             #如果不是200就重试，每次递减重试次数
             return url_retry(url,num_retries-1)
-    #如果url不存在会抛出ConnectionError错误，这个情况不做重试
+    #如果url不存在会抛出ConnectionError，这个情况不做重试
     except requests.exceptions.ConnectionError as e:
         return
     return html
