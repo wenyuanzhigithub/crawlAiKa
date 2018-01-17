@@ -120,9 +120,9 @@ def  insertaika(citylist,i):
                             break
                         else:
                             insertsql=""
-                            conn = pymssql.connect(host="59.151.127.51", user="datawarehouse_r",
-                                                   password="sdLEK236XDwd6",
-                                                   database="YHBI_DW")
+                            conn = pymssql.connect(host="host", user="sa",
+                                                   password="123456",
+                                                   database="DB")
                             cur = conn.cursor()
                             if not cur:
                                 raise (NameError, "链接数据库失败")
