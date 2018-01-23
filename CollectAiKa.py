@@ -57,7 +57,7 @@ def  insertaika(citylist,Mainurl):
     '''
     重试次数
     '''
-    RETRY_TIME = 3
+    RETRY_TIME = 2
 
     '''
     USER_AGENTS 随机头信息
