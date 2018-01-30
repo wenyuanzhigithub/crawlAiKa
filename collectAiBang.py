@@ -29,7 +29,7 @@ def insertsql(conn, cur, sql):  # 向数据库插入数据
     conn.commit()
 
 
-def selectsql(cur, sql):  # 从数据库中查询数据
+def selectsql(cur, sql):  # 从数据库中查询数据1
     cur.execute(sql)
     resList = cur.fetchall()
     return resList
