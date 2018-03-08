@@ -37,7 +37,7 @@ def selectsql(cur, sql):  # 从数据库中查询数据
 def url_retry(url,num_retries=3):
     try:
         request = requests.get(url,timeout=60)
-        #raise_for_status(),如果不是200会抛出HTTPError错误
+        #如果不是200会抛出HTTPError错误
         request.raise_for_status()
         html = request.content
     except requests.HTTPError as e:
