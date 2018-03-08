@@ -190,7 +190,7 @@ if __name__ == '__main__':
     conn = pymssql.connect(host="host", user="acount", password="pwd", database="dbname")
     cur = conn.cursor()
     if not cur:
-        raise (NameError, "链接数据库失败")
+        raise (NameError, "链接失败")
     else:
         print('success link sql')
         cur.execute(sql_citylist)
